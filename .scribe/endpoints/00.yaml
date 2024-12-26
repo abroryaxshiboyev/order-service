@@ -1,0 +1,129 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/orders
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      customer_id:
+        name: customer_id
+        description: ''
+        required: true
+        example: 18
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      items:
+        name: items
+        description: 'Must have at least 1 items.'
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      delivery_date:
+        name: delivery_date
+        description: 'Must be a valid date. Must be a date after <code>2024-12-27 16:52:49</code>.'
+        required: true
+        example: '2028-05-20'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'items[].product_id':
+        name: 'items[].product_id'
+        description: 'The <code>id</code> of an existing record in the products table.'
+        required: true
+        example: 4
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      'items[].quantity':
+        name: 'items[].quantity'
+        description: 'Must be at least 1.'
+        required: true
+        example: 21
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      customer_id: 18
+      items:
+        -
+          product_id: 4
+          quantity: 21
+      delivery_date: '2028-05-20'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/stats/popular-products
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '[{"id":2,"name":"Dr. Emmy Ortiz","price":"27000.00","created_at":"2024-12-22T17:13:30.000000Z","updated_at":"2024-12-22T17:13:30.000000Z","order_items_count":4},{"id":1,"name":"Asha Brekke","price":"23000.00","created_at":"2024-12-22T17:13:30.000000Z","updated_at":"2024-12-22T17:13:30.000000Z","order_items_count":2},{"id":4,"name":"Miss Carlotta Spinka Jr.","price":"26000.00","created_at":"2024-12-22T17:13:30.000000Z","updated_at":"2024-12-22T17:13:30.000000Z","order_items_count":0},{"id":5,"name":"Dr. Lesly Nolan","price":"16000.00","created_at":"2024-12-22T17:13:30.000000Z","updated_at":"2024-12-22T17:13:30.000000Z","order_items_count":0},{"id":6,"name":"Dr. Issac Rutherford","price":"21000.00","created_at":"2024-12-22T17:13:30.000000Z","updated_at":"2024-12-22T17:13:30.000000Z","order_items_count":0},{"id":7,"name":"Brooke Powlowski II","price":"12000.00","created_at":"2024-12-22T17:13:30.000000Z","updated_at":"2024-12-22T17:13:30.000000Z","order_items_count":0},{"id":8,"name":"Dr. Litzy Franecki III","price":"16000.00","created_at":"2024-12-22T17:13:30.000000Z","updated_at":"2024-12-22T17:13:30.000000Z","order_items_count":0},{"id":9,"name":"Kattie Kuhic","price":"17000.00","created_at":"2024-12-22T17:13:30.000000Z","updated_at":"2024-12-22T17:13:30.000000Z","order_items_count":0},{"id":10,"name":"Palma Bashirian","price":"27000.00","created_at":"2024-12-22T17:13:30.000000Z","updated_at":"2024-12-22T17:13:30.000000Z","order_items_count":0},{"id":3,"name":"Miss Una Keeling","price":"22000.00","created_at":"2024-12-22T17:13:30.000000Z","updated_at":"2024-12-22T17:13:30.000000Z","order_items_count":0}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
